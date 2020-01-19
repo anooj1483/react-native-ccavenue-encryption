@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.encryptccavenue;
 
 import android.util.Base64;
 import android.util.Log;
