@@ -11,6 +11,7 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.WritableMap;
 
+import java.net.URLEncoder;
 import java.security.KeyFactory;
 import java.security.PublicKey;
 import java.security.spec.X509EncodedKeySpec;
@@ -56,9 +57,11 @@ public class CcavenueEncryptionModule extends ReactContextBaseJavaModule {
 
     }
 
-//    @ReactMethod
-//    public void getBytesFromString(String val){
-//        WritableMap params = Arguments.createMap();
-//        //params.put("bytes",val.getBytes());
-//    }
+    @ReactMethod
+    public void urlEncode(String val, Promise promise){
+        String enc = URLEncoder.encode(val);
+        WritableMap params = Arguments.createMap();
+        params.putString("encoded",enc);
+        promise.resolve(params);
+    }
 }
