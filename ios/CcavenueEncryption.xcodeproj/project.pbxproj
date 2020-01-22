@@ -252,13 +252,13 @@
 					"$(SRCROOT)/../../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
+					"/Users/anooj/openssl_ios/lib/**",
 					"$(inherited)",
-					/Users/anooj/openssl_ios/lib,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CcavenueEncryption;
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = /Users/anooj/openssl_ios/include;
+				USER_HEADER_SEARCH_PATHS = "/Users/anooj/openssl_ios/include/**";
 			};
 			name = Debug;
 		};
@@ -273,13 +273,13 @@
 					"$(SRCROOT)/../../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
+					"/Users/anooj/openssl_ios/lib/**",
 					"$(inherited)",
-					/Users/anooj/openssl_ios/lib,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CcavenueEncryption;
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = /Users/anooj/openssl_ios/include;
+				USER_HEADER_SEARCH_PATHS = "/Users/anooj/openssl_ios/include/**";
 			};
 			name = Release;
 		};
