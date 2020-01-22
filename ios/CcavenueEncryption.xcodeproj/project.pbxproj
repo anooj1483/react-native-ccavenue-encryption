@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0A84FC23D86A050089B546 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37E0EF23D84302004653E2 /* Foundation.framework */; };
+		0E0A84FE23D87B010089B546 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37E0ED23D842E5004653E2 /* libcrypto.a */; };
+		0E0A84FF23D87B010089B546 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37E0EB23D842D3004653E2 /* libssl.a */; };
 		0E4FD52A23D8147300698B93 /* CCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FD52723D8147300698B93 /* CCTool.m */; };
 		0E4FD52D23D81E3000698B93 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FD52B23D81E3000698B93 /* Base64.m */; };
 		B3E7B58A1CC2AC0600A0062D /* CcavenueEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* CcavenueEncryption.m */; };
@@ -25,12 +28,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E0A84FD23D87A5B0089B546 /* openssl_ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = openssl_ios; sourceTree = "<group>"; };
 		0E37E0EB23D842D3004653E2 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = openssl_ios/lib/libssl.a; sourceTree = "<group>"; };
 		0E37E0ED23D842E5004653E2 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = openssl_ios/lib/libcrypto.a; sourceTree = "<group>"; };
 		0E37E0EF23D84302004653E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0E4FD52723D8147300698B93 /* CCTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTool.m; sourceTree = "<group>"; };
 		0E4FD52823D8147300698B93 /* CCTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTool.h; sourceTree = "<group>"; };
-		0E4FD52923D8147300698B93 /* openssl_ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = openssl_ios; sourceTree = "<group>"; };
 		0E4FD52B23D81E3000698B93 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		0E4FD52C23D81E3000698B93 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libCcavenueEncryption.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCcavenueEncryption.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E0A84FC23D86A050089B546 /* Foundation.framework in Frameworks */,
+				0E0A84FE23D87B010089B546 /* libcrypto.a in Frameworks */,
+				0E0A84FF23D87B010089B546 /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +58,7 @@
 		0E37E0EA23D842D3004653E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E0A84FD23D87A5B0089B546 /* openssl_ios */,
 				0E37E0EF23D84302004653E2 /* Foundation.framework */,
 				0E37E0EB23D842D3004653E2 /* libssl.a */,
 				0E37E0ED23D842E5004653E2 /* libcrypto.a */,
@@ -76,7 +83,6 @@
 				B3E7B5891CC2AC0600A0062D /* CcavenueEncryption.m */,
 				0E4FD52823D8147300698B93 /* CCTool.h */,
 				0E4FD52723D8147300698B93 /* CCTool.m */,
-				0E4FD52923D8147300698B93 /* openssl_ios */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				0E37E0EA23D842D3004653E2 /* Frameworks */,
 			);
@@ -252,13 +258,14 @@
 					"$(SRCROOT)/../../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"/Users/anooj/openssl_ios/lib/**",
+					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/openssl_ios/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CcavenueEncryption;
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "/Users/anooj/openssl_ios/include/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR) $(inherited)";
 			};
 			name = Debug;
 		};
@@ -273,13 +280,14 @@
 					"$(SRCROOT)/../../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"/Users/anooj/openssl_ios/lib/**",
+					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/openssl_ios/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CcavenueEncryption;
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "/Users/anooj/openssl_ios/include/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR) $(inherited)";
 			};
 			name = Release;
 		};
