@@ -1,4 +1,5 @@
 #import "CcavenueEncryption.h"
+#import "CCTool.h"
 
 
 @implementation CcavenueEncryption
@@ -9,6 +10,18 @@ RCT_EXPORT_METHOD(sampleMethod:(NSString *)stringArgument numberParameter:(nonnu
 {
     // TODO: Implement some actually useful functionality
 	callback(@[[NSString stringWithFormat: @"numberArgument: %@ stringArgument: %@", numberArgument, stringArgument]]);
+}
+
+RCT_REMAP_METHOD(encrypt,myRequestString:(NSString *)myRequestString  rsaKeyData:(NSString *)rsaKeyData
+                 findEventsWithResolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
+{
+    CCTool *ccTool = [[CCTool alloc] init];
+    NSString *rsaKey = [[NSString alloc] initWithData:rsaKeyData encoding:NSASCIIStringEncoding];
+    rsaKey = [rsaKey stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    rsaKey = [NSString stringWithFormat:@"-----BEGIN PUBLIC KEY-----\n%@\n-----END PUBLIC KEY-----\n",rsaKey];
+    NSString *encVal = [ccTool encryptRSA:myRequestString key:rsaKey];
+    
 }
 
 @end
