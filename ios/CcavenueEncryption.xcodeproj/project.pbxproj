@@ -244,40 +244,42 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
-					/Users/anooj/openssl_ios/include,
 					"$(SRCROOT)/../../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					/Users/anooj/openssl_ios/lib,
 					"$(inherited)",
+					/Users/anooj/openssl_ios/lib,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CcavenueEncryption;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = /Users/anooj/openssl_ios/include;
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
-					/Users/anooj/openssl_ios/include,
 					"$(SRCROOT)/../../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					/Users/anooj/openssl_ios/lib,
 					"$(inherited)",
+					/Users/anooj/openssl_ios/lib,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CcavenueEncryption;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = /Users/anooj/openssl_ios/include;
 			};
 			name = Release;
 		};
