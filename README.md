@@ -12,11 +12,21 @@
 
 
 #### iOS
+### Using Cocoapods
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-ccavenue-encryption` and add `CcavenueEncryption.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libCcavenueEncryption.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+1. In Terminal, from your root folder, `cd iOS`
+2. Open PodFile, add the following,
+	```
+	 pod 'react-native-ccavenue-encryption', :path => '../node_modules/react-native-ccavenue-encryption'
+	 ```
+3. Run `pod install`
+4. Copy and paste the openssl_ios folder in home directory. So folder path will be like: /Users/username/openssl_ios
+5. Open Project.xcworkspace, Tap on Pods project from Project Navigator. Now you can see targets of all installed libraries and React core projects.
+6. Tap on react-native-ccavenue-encryption from the list of Targets.
+7. Tap on Build Settings and Search for "Library Search Paths". Add the folder path of "lib" folder of openssl_ios (/Users/username/openssl_ios/lib).
+8. Now in same window, search for "Allow Search User Paths". Mark it as YES.
+9. In same window, search for "User Header Search Paths". Add the folder path of "include" folder of openssl_ios (/Users/username/openssl_ios/include).
+10. Drag and drop openssl_ios folder to Pods Project (root). Copy if neededd option should be checked (mandatory)
 
 #### Android
 
@@ -38,6 +48,10 @@
 ```javascript
 import CcavenueEncryption from 'react-native-ccavenue-encryption';
 
-// TODO: What to do with the module?
-CcavenueEncryption;
+let encryptedStringObj = await CcavenueEncryption.encrypt(msg, key);
+
+URL Decoding is available only for Android
+let encoded = await CcavenueEncryption.urlEncode(encryptedString)
+
+
 ```
