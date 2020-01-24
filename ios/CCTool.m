@@ -22,6 +22,7 @@
 @implementation CCTool
 
 - (NSString *)encryptRSA:(NSString *)raw key:(NSString *)pubKey {
+    NSLog(pubKey);
     const char *p = (char *)[pubKey UTF8String];
 
     BIO *bufio;
